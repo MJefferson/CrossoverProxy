@@ -1,0 +1,12 @@
+{
+    "name": "Crossover-Proxy"
+  , "version": "0.0.1"
+  , "description": "A service that knows how to talk to various social platforms"
+  , "author": "Adaptly <developers@adaptly.com>"
+  , "private": true
+  , "dependencies": {
+      "express": "2.5.8"
+    , "stylus": ">= 0.0.1"
+    , "jade": ">= 0.0.1"
+  }
+}
