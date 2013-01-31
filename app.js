@@ -3,12 +3,14 @@
  * Module dependencies.
  */
 
-var express = require('express')
+var http = require('http')
+  , express = require('express')
   , routes = require('./routes')
   , coffee = require('coffee-script')
-  , Instagram = require('./lib/instagram')
+  , Instagram = require('./lib/instagram');
 
-var app = module.exports = express.createServer();
+var app = module.exports = express();
+var server = http.createServer(app);
 
 // Configuration
 
@@ -33,7 +35,8 @@ app.configure('production', function(){
 // Routes
 
 app.get('/', routes.index);
+app.get('/instagram/:handle', routes.instagram.get);
 
-app.listen(3000, function(){
-  console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
+server.listen(3020, function(){
+  console.log("Express server listening on port %d in %s mode", server.address().port, app.settings.env);
 });
