@@ -4,7 +4,9 @@
  */
 
 var express = require('express')
-  , routes = require('./routes');
+  , routes = require('./routes')
+  , coffee = require('coffee-script')
+  , Instagram = require('./lib/instagram')
 
 var app = module.exports = express.createServer();
 
